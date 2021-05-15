@@ -1,6 +1,7 @@
 package org.uresti.pozarreal.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,6 +39,7 @@ public class StreetServiceImpl implements StreetsService {
     @Transactional(readOnly = true)
     public StreetInfo getStreetInfo(String streetId) {
 
+      //  Optional<Street> objeto = streetRepository.findById(streetId);
         Street street = streetRepository.findById(streetId).orElseThrow();
         StreetInfo streetInfo = new StreetInfo();
 
